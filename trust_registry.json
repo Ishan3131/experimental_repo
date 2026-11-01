@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "project": "Ishan3131/experimental_repo",
+  "signer": "Ishan3131",
+  "created_at": "2026-11-01T05:40:00Z",
+  "description": "Root Web-of-Trust (WoT) registry for PR contributor reputation",
+  "vouches": [
+    "himanshibishnoi",
+    "Jyotikesari",
+    "Ishan3131"
+  ],
+  "denouncements": [
+  ],
+  "trusted_peers": [
+    "Ishan3131/repo1"
+  ],
+  "signature": "sha256:9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"
+}
