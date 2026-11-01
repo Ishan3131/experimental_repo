@@ -1,0 +1,39 @@
+name: WoT Contributor Triage
+on:
+pull_request_target:
+types: [opened, synchronize, reopened]
+permissions:
+pull-requests: write
+issues: write
+contents: read
+jobs:
+wot-evaluation:
+runs-on: ubuntu-latest
+steps:
+- name: Checkout peer repository (for trust_signed.json)
+uses: actions/checkout@v4
+with:
+path: peer_repo
+- name: Checkout WoT Engine (Ishan3131/spam-detection)
+uses: actions/checkout@v4
+with:
+repository: Ishan3131/spam-detection
+ref: main
+path: wot_engine
+- name: Set up Python
+uses: actions/setup-python@v5
+with:
+python-version: "3.12"
+cache: pip
+cache-dependency-path: wot_engine/requirements.txt
+- name: Install dependencies
+run: pip install -r wot_engine/requirements.txt
+- name: Run Decentralized WoT Evaluator
+env:
+GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+GITHUB_EVENT_PATH: ${{ github.event_path }}
+PYTHONPATH: wot_engine
+run: |
+python -m wot_bot.main 
+--event-path "$GITHUB_EVENT_PATH" 
+--registry peer_repo/trust_signed.json
