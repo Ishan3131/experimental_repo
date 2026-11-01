@@ -1,3 +1,2 @@
 # experimental_repo jyoti
-HIMANSHI
-Ishan
+HIMANSHI BISHNOI
