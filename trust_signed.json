@@ -5,11 +5,11 @@
   "created_at": "2026-11-01T05:40:00Z",
   "description": "Root Web-of-Trust (WoT) registry for PR contributor reputation",
   "vouches": [
-    "Jyotikesari",
-    "Ishan3131"
+    "Jyotikesari"
   ],
   "denouncements": [
-    "himanshibishnoi"
+    "himanshibishnoi",
+    "Ishan3131"
   ],
   "trusted_peers": [
     "Ishan3131/repo1"
